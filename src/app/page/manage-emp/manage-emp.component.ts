@@ -1,26 +1,35 @@
+import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-manage-emp',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, HttpClientModule, CommonModule],
   templateUrl: './manage-emp.component.html',
   styleUrl: './manage-emp.component.css'
 })
 export class ManageEmpComponent {
 
-  public employeeObj= {
-    firstName : "",
-    lastName : "",
-    eMail : "",
-    department : "",
-    role : ""
-  }
-  addEmployee(){
-    
-    console.log(this.employeeObj)
+  public employeeObj = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    department_id: "",
+    role_id: ""
   }
 
-  
+  constructor(private http:HttpClient) {}
+
+  addEmployee() {
+    this.http.post("http://localhost:8080/emp-controller/add-employeee",this.employeeObj).subscribe((data) => {
+      console.log(data);
+    })
+
+    console.log(this.employeeObj);
+    
+  }
+
+
 }
