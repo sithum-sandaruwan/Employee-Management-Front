@@ -20,19 +20,24 @@
 
   <div class="input-group mb-3">
     <select class="form-select mb-3" aria-label="Default select example" id="department" required [(ngModel)]="employeeObj.department_id">
-      <option selected>Department</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="">Select Department</option>
+      <option value="No Department">No Department</option>
+      <option value="Product Development">Product Development</option>
+      <option value="Human Resource">Human Resource</option>
+      <option value="Customer Support">Customer Support</option>
+      <option value="Sales & Marketing">Sales & Marketing</option>
+      <option value="Finance & Accounting">Finance & Accounting</option>
     </select>
   </div>
   
   <div class="input-group mb-3">
     <select class="form-select mb-3" aria-label="Default select example" id="role" [(ngModel)]="employeeObj.role_id">
-      <option selected>Role</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
+      <option value="">Select Role</option>
+      <option value="Project Manager">Project Manager</option>
+      <option value="IT Manager">IT Manager</option>
+      <option value="Accountant">Accountant</option>
+      <option value="HR Manager">HR Manager</option>
+      <option value="Sales Manager">Sales Manager</option>
     </select>
   </div>
 
