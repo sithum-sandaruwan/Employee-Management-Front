@@ -10,9 +10,17 @@ import { FormsModule } from '@angular/forms';
 })
 export class ManageEmpComponent {
 
-  public firstName : String =""
+  public employeeObj= {
+    firstName : "",
+    lastName : "",
+    eMail : "",
+    department : "",
+    role : ""
+  }
   addEmployee(){
     
-    alert(this.firstName)
+    console.log(this.employeeObj)
   }
+
+  
 }

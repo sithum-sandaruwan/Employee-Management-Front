@@ -3,23 +3,23 @@
   <h1 class="font-monospace font-bg-dark text-center mb-4 bg-info p-3 fw-bold">Add Employee</h1>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1"></span>
-    <input type="text" class="form-control" placeholder="First Name" aria-label="Username" [(ngModel)]="firstName"
+    <input type="text" class="form-control" placeholder="First Name" aria-label="Username" [(ngModel)]="employeeObj.firstName"
       aria-describedby="basic-addon1">
   </div>
   <div class="input-group mb-3">
     <span class="input-group-text" id="basic-addon1"></span>
-    <input type="text" class="form-control" placeholder="Last Name" aria-label="Username"
+    <input type="text" class="form-control" placeholder="Last Name" aria-label="Username" [(ngModel)]="employeeObj.lastName"
       aria-describedby="basic-addon1">
   </div>
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="employeeObj.eMail" aria-describedby="emailHelp">
     <div id="emailHelp" class="form-text">Enter your personal e-mail</div>
   </div>
 
   <div class="input-group mb-3">
-    <select class="form-select mb-3" aria-label="Default select example">
+    <select class="form-select mb-3" aria-label="Default select example" id="department" required [(ngModel)]="employeeObj.department">
       <option selected>Department</option>
       <option value="1">One</option>
       <option value="2">Two</option>
@@ -28,7 +28,7 @@
   </div>
   
   <div class="input-group mb-3">
-    <select class="form-select mb-3" aria-label="Default select example">
+    <select class="form-select mb-3" aria-label="Default select example" id="role" [(ngModel)]="employeeObj.role">
       <option selected>Role</option>
       <option value="1">One</option>
       <option value="2">Two</option>
