@@ -1,20 +1,24 @@
 <h1 class="font-monospace text-bg-success text-center mb-4 bg-dark p-3 fw-bold">Add Employee</h1>
 
-<div class="container">
-    <table class="table">
-        <tr>
+<div class="container mt-5">
+    <table class="table table-bordered ">
+        <tr class="border-black text-center bg-gradient text-bg-primary ">
+            <th>Count</th>
             <th>ID</th>
             <th>Name</th>
             <th>E-mail</th>
             <th>Department</th>
             <th>Role</th>
+            <th></th>
         </tr>
-        <tr *ngFor = "let employee of employeeList">
-            <td>{{employee.id}}</td>
+        <tr class="text-center" *ngFor = "let employee of employeeList; index as i">
+            <td>{{i+1}}</td>
+            <td>{{"Emp#00"+employee.id}}</td>
             <td>{{employee.firstName+" "+employee.lastName}}</td>
             <td>{{employee.email}}</td>
             <td>{{employee.department_id}}</td>
             <td>{{employee.role_id}}</td>
+            <td><button class="btn btn-danger m-1"><i class="bi bi-trash-fill "></i></button></td>
         </tr>
 
     </table>
