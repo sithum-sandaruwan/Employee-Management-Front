@@ -54,4 +54,6 @@ export class ViewAllEmployeesComponent {
       console.log(res)
     });
   }
+
+  updateEmployee(){}
 }
