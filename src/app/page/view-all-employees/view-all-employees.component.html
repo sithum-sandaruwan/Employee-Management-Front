@@ -2,31 +2,33 @@
 <h1 class="font-monospace text-bg-success text-center mb-4 bg-dark p-3 fw-bold">Add Employee</h1>
 
 <div class="container mt-5">
-    <table class="table table-bordered ">
-        <tr class="border-black text-center bg-gradient text-bg-primary ">
-            <th>Count</th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>E-mail</th>
-            <th>Department</th>
-            <th>Role</th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        <tr class="text-center" *ngFor="let employee of employeeList; index as i">
-            <td>{{i+1}}</td>
-            <td>{{"Emp#00"+employee.id}}</td>
-            <td>{{employee.firstName+" "+employee.lastName}}</td>
-            <td>{{employee.email}}</td>
-            <td>{{employee.department_id}}</td>
-            <td>{{employee.role_id}}</td>
-            <td><button class="btn btn-danger m-1" (click)="deleteEmployee(employee)"><i class="bi bi-trash-fill"></i></button></td>
-            <td></td>
-            <td><button class="btn btn-secondary" (click)="updateEmployee()" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button></td>
-        </tr>
+  <table class="table table-bordered ">
+    <tr class="border-black text-center bg-gradient text-bg-primary ">
+      <th>Count</th>
+      <th>ID</th>
+      <th>Name</th>
+      <th>E-mail</th>
+      <th>Department</th>
+      <th>Role</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr class="text-center" *ngFor="let employee of employeeList; index as i">
+      <td>{{i+1}}</td>
+      <td>{{"Emp#00"+employee.id}}</td>
+      <td>{{employee.firstName+" "+employee.lastName}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.department_id}}</td>
+      <td>{{employee.role_id}}</td>
+      <td><button class="btn btn-danger m-1" (click)="deleteEmployee(employee)"><i
+            class="bi bi-trash-fill"></i></button></td>
+      <td></td>
+      <td><button class="btn btn-secondary" (click)="updateEmployee(employee)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button></td>
+    </tr>
 
-    </table>
+  </table>
 </div>
 
 
@@ -39,19 +41,34 @@
       </div>
       <div class="modal-body">
         <form>
-          
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">ID:</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedEmp.id" name="id" disabled>
           </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Name:</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedEmp.name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">E-Mail:</label>
+            <input type="text" class="form-control" id="recipient-name"  [(ngModel)]="selectedEmp.email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Department_Id:</label>
+            <input type="text" class="form-control" id="recipient-name"  [(ngModel)]="selectedEmp.department" name="department">
+          </div>
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Role_Id:</label>
+            <input type="text" class="form-control" id="recipient-name" [(ngModel)]="selectedEmp.role" name="role">
           </div>
 
         </form>
       </div>
-     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Update</button>
+      </div>
     </div>
   </div>
 </div>

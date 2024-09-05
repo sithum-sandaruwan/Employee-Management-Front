@@ -14,7 +14,15 @@ import { NavCompComponent } from '../../common/nav-comp/nav-comp.component';
 })
 export class ViewAllEmployeesComponent {
 
-  public employeeList:any;
+  public employeeList:any; 
+
+  public selectedEmp={
+    id:" ",
+    name:"",
+    email:"",
+    department:"",
+    role:""   
+  };
 
   constructor(private http: HttpClient) { 
     this.loadEmployeeTable();
@@ -55,5 +63,19 @@ export class ViewAllEmployeesComponent {
     });
   }
 
-  updateEmployee(){}
+  updateEmployee(employee:any){
+
+    
+    
+
+    this.selectedEmp ={
+      id:employee.id,
+      name:employee.firstName+" "+employee.lastName,
+      email:employee.email,
+      department:employee.department_id,
+      role:employee.role_id   
+    };
+    console.log(employee);
+    
+  }
 }
