@@ -23,8 +23,35 @@
             <td>{{employee.role_id}}</td>
             <td><button class="btn btn-danger m-1" (click)="deleteEmployee(employee)"><i class="bi bi-trash-fill"></i></button></td>
             <td></td>
-            <td><button class="btn btn-secondary" (click)="updateEmployee()"><i class="bi bi-pencil-square"></i></button></td>
+            <td><button class="btn btn-secondary" (click)="updateEmployee()" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button></td>
         </tr>
 
     </table>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="message-text" class="col-form-label">Message:</label>
+            <textarea class="form-control" id="message-text"></textarea>
+          </div>
+
+        </form>
+      </div>
+     
+    </div>
+  </div>
 </div>
